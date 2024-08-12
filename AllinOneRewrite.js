@@ -6,7 +6,7 @@ const list = {
     
 		'incognito': { eKey: 'unlock', pID: 'com.overdesigned.incognito.lifetime' },
     
-		'chat': { eKey: 'plus', pID: 'PlusYearly' },
+		'chat': { eKey: 'plus', pID: 'mwmweekly' },
     
 		'chat': { eKey: 'pro', pID: 'yearly' },
     
