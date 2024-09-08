@@ -1,4 +1,3 @@
-
 #!name= chat Uncensored
 #!desc= Active Premium chat
 
