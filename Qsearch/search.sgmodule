@@ -1,0 +1,16 @@
+#!name=Q-Search
+#!desc=Safari Search Add-ons by Neurogram
+
+
+[URL Rewrite]
+^https:\/\/duckduckgo.com\/\?q=yan\+([^&]+).+ https:\/\/yandex.com\/search?text=$1 302
+^https:\/\/duckduckgo.com\/\?q=exa\+([^&]+).+ https://exa.ai/search?q=$1 302
+^https:\/\/duckduckgo.com\/\?q=gh\+([^&]+).+ https://github.com/search?q=$1 302
+^https:\/\/duckduckgo.com\/\?q=gen\+([^&]+).+ https://www.genspark.ai/search?=%1 302
+^https:\/\/duckduckgo.com\/\?q=gpt\+([^&]+).+ https://isou.chat/search?q=$1 302
+^https:\/\/duckduckgo.com\/\?q=kagi\+([^&]+).+ https://kagi.com/search?q=$1 302
+
+
+
+[MITM]
+hostname = %APPEND% duckduckgo.com
