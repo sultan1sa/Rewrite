@@ -1,0 +1,13 @@
+name: iMe
+description: iMe
+scriptings:
+- http_response:
+    name: iMe
+    match: https:\/\/api\.imem\.apple\.app\/api\/premium\/getOwnStatus
+    script_url: https://raw.githubusercontent.com/sultan1sa/Rewrite/refs/heads/main/ime/imee.js
+    timeout: 60
+    body_required: true
+mitm:
+  hostnames:
+    includes:
+    - -api.imem.app
