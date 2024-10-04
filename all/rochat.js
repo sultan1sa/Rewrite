@@ -12,20 +12,20 @@ hostname = api.rochathub.com
 var objc = JSON.parse($response.body);
     objc = {
   "rights" : {
-    "generalbotLeftTimes" : 29,
+    "generalbotLeftTimes" : 5000,
     "premiumbotLeftTimes" : 595,
-    "gptLeftTimes" : 296,
+    "gptLeftTimes" : 5000,
     "premiumbotTotalTimes" : 600,
     "gptDisplayName" : "GPT-4",
     "gptTotalTimes" : 300,
     "haveStripeBill" : true,
     "generabotDisplayName" : "通用Bot",
     "premiumbotDisplayName" : "专业Bot",
-    "generalbotTotalTimes" : 30,
+    "generalbotTotalTimes" : 500,
     "memberShipRights" : {
-      "term" : "YEARLY",
+      "term" : "yearly",
       "starttime" : "1706442853",
-      "expiredtime" : "2706702060"
+      "expiredtime" : "1883639265"
     },
     "isGeneralbotUnlimited" : true
   }
