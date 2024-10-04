@@ -23,9 +23,9 @@ var objc = JSON.parse($response.body);
     "premiumbotDisplayName" : "专业Bot",
     "generalbotTotalTimes" : 30,
     "memberShipRights" : {
-      "term" : "YEARLY",
+      "term" : "MONTHLY",
       "starttime" : "1706442853",
-      "expiredtime" : "2706702060"
+      "expiredtime" : "4131390113"
     },
     "isGeneralbotUnlimited" : true
   }
