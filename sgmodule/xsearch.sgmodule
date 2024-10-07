@@ -50,13 +50,13 @@
 
 ^https:\/\/www\.google\.com\/search\?q=gi(\+|%20)([^&]+).+ https://isou.chat/search?q=$2 302
 
-^https:\/\/www\.google\.com\/search\?q=yd(\+|%20)([^&]+).+ ‎‏https://yandex.com/images/touch/search?lr=21467&text=$2 302
+^https:\/\/www\.google\.com\/search\?q=yan(\+|%20)([^&]+).+ ‎‏https://yandex.com/images/touch/search?lr=21467&text=$2 302
 
 ^https:\/\/www\.google\.com\/search\?q=exa(\+|%20)([^&]+).+ https://exa.ai/search?q=$2 302
 
 ^https:\/\/www\.google\.com\/search\?q=tre(\+|%20)([^&]+).+ https://searx.be/search?q=site$2 302
 
-^https:\/\/www\.google\.com\/search\?q=db(\+|%20)([^&]+).+ https://dsearch.com/search?q=$2 302
+^https:\/\/www\.google\.com\/search\?q=yani(\+|%20)([^&]+).+ https://yandex.com/search?text=$2 302
 
 ^https:\/\/www\.google\.com\/search\?q=zh(\+|%20)([^&]+).+ https://yandex.com/images/touch/search?lr=21467&text=$2 302
 
@@ -64,7 +64,7 @@
 
 ^https:\/\/www\.google\.com\/search\?q=ddg(\+|%20)([^&]+).+ https://duckduckgo.com/?ia=about&q=$2 302
 
-^https:\/\/www\.google\.com\/search\?q=bi(\+|%20)([^&]+).+ https://kagi.com/search?q=$2 302
+^https:\/\/www\.google\.com\/search\?q=kagi(\+|%20)([^&]+).+ https://kagi.com/search?q=$2 302
 
 
 
