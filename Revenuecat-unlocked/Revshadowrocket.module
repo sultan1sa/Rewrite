@@ -1,0 +1,9 @@
+#!name=Revenuecat
+#!desc= Revenuecat
+
+[Script]
+
+trevenuecat = type=http-response,script-path= https://raw.githubusercontent.com/sultan1sa/Rewrite/refs/heads/main/Revenuecat-unlocked/revenue.js,pattern=https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$),requires-body=true,timeout=10,script-update-interval=0,enable=true
+
+[MITM]
+hostname = api.revenuecat.com
