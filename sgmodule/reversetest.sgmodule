@@ -4,7 +4,7 @@
 #!date = 7 December 2023
 
 [Script]
-http-response https:https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$) script-path=https://raw.githubusercontent.com/sultan1sa/Rewrite/refs/heads/main/Revenuecat-unlocked/Revenuecatloon.js, requires-body=true, timeout=10, tag=Revenuecat
+http-response https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$) script-path=https://raw.githubusercontent.com/sultan1sa/Rewrite/refs/heads/main/Revenuecat-unlocked/Revenuecatloon.js, requires-body=true, timeout=10, tag=Revenuecat
 
 [Mitm]
 hostname = api.revenuecat.com
