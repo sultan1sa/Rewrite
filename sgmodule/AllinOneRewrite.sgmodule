@@ -1,0 +1,23 @@
+#!name=local
+#!desc=local
+
+[Script]
+auto = type=http-response, pattern=^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$), script-path=https://raw.githubusercontent.com/sultan1sa/Revenuecat/main/generation/anybox/Rev.js, requires-body=true, script-update-interval=0, timeout=10
+
+
+
+apphud = type=http-response, pattern=https:\/\/api\.apphud\.com\/v1\/(subscriptions|customers), script-path=https://raw.githubusercontent.com/sultan1sa/AllinOneRewrite-/main/Apphud.js, requires-body=true, script-update-interval=0, timeout=10
+
+mail10 = type=http-response, pattern=api.qonversion.io/v1/user/init, script-path=https://raw.githubusercontent.com/sultan1sa/AllinOneRewrite-/main/10mail.js, requires-body=true, script-update-interval=0, timeout=10
+
+chat Uncensored = type=http-response, pattern=https://api.adapty.io/api/v1/sdk/in-apps/apple/receipt/validate/, script-path=https://raw.githubusercontent.com/sultan1sa/AllinOneRewrite-/main/ChatUncensored.js, requires-body=true, script-update-interval=0, timeout=10
+
+RewriteBoxJs = type=http-request, pattern=https?:\/\/boxjs\.(com|net), script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js, requires-body=true, timeout=120
+
+iTunes = type=http-response, pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$, script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/iTunes.js, requires-body=true, max-size=-1, timeout=60
+
+
+
+
+[MITM]
+hostname = %APPEND% api.revenuecat.com, api.adapty.io, api.qapi.qonversion.io, api.apphud.com, Boxjs.com, *.boxjs.net, *.boxjs.com, buy.itunes.apple.com, app-measurement.com
