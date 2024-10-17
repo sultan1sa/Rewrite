@@ -1,14 +1,3 @@
-/*
-rochat
-
-[rewrite_local]
-https://api.rochathub.com/inteco.user.v1.UserRightsService/GetUserRights url script-response-body https://raw.githubusercontent.com/sultan1sa/Rewrite/refs/heads/main/all/rochat.js
-
-[mitm]
-hostname = api.rochathub.com
-
-*/
-
 var objc = JSON.parse($response.body);
     objc = {
   "rights" : {
