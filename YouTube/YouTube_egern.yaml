@@ -1,0 +1,92 @@
+name: YouTube双语翻译
+description: 字幕增强及双语翻译，支持Youtube Music歌词翻译。此插件需要置于YouTube去广告插件之下，且和YouTube去广告插件的歌词翻译冲突，不支持tvOS设备。
+icon: https://github.com/Auniquesir/Box/raw/X/icon/App/Egern.png
+scriptings:
+- http_request:
+    name: JSON·YouTube播放器请求
+    match: ^https?:\/\/(www|m|tv)\.youtube\.com\/youtubei\/v1\/player\?(.*)
+    script_url: https://kelee.one/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_request.js
+    arguments:
+      _compat.$argument: '[{Type},{ar},{ShowOnly},{Position}]'
+    body_required: true
+- http_response:
+    name: JSON·YouTube播放器响应
+    match: ^https?:\/\/(www|m|tv)\.youtube\.com\/youtubei\/v1\/player\?(.*)
+    script_url: https://kelee.one/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_response.js
+    arguments:
+      _compat.$argument: '[{Type},{ar},{ShowOnly},{Position}]'
+    body_required: true
+- http_request:
+    name: Proto·YouTube播放器请求
+    match: ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/player\?(.*)
+    script_url: https://kelee.one/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_request.js
+    arguments:
+      _compat.$argument: '[{Type},{ar},{ShowOnly},{Position}]'
+    body_required: true
+    binary_body: true
+- http_response:
+    name: Proto·YouTube播放器响应.proto
+    match: ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/player\?(.*)
+    script_url: https://kelee.one/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_response.js
+    arguments:
+      _compat.$argument: '[{Type},{ar},{ShowOnly},{Position}]'
+    body_required: true
+    binary_body: true
+- http_response:
+    name: Proto·GetWatch响应
+    match: ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/get_watch\?(.*)
+    script_url: https://kelee.one/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_response.js
+    arguments:
+      _compat.$argument: '[{Type},{ar},{ShowOnly},{Position}]'
+    body_required: true
+    binary_body: true
+- http_request:
+    name: YouTube定时文本请求
+    match: ^https?:\/\/(www|m)\.youtube\.com\/api\/timedtext\?(.*)
+    script_url: https://kelee.one/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_request.js
+    arguments:
+      _compat.$argument: '[{Type},{ar},{ShowOnly},{Position}]'
+- http_response:
+    name: YouTube合成定时文本响应
+    match: ^https?:\/\/(www|m)\.youtube\.com\/api\/timedtext\?(.*)subtype=(Official|External)
+    script_url: https://kelee.one/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Composite_Subtitles_response.js
+    body_required: true
+- http_response:
+    name: YouTube翻译定时文本响应
+    match: ^https?:\/\/(www|m)\.youtube\.com\/api\/timedtext\?(.*)subtype=Translate
+    script_url: https://kelee.one/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_Translate_response.js
+    body_required: true
+- http_request:
+    name: JSON·YouTube Music浏览请求
+    match: ^https?:\/\/music\.youtube\.com\/youtubei\/v1\/browse\?(.*)
+    script_url: https://kelee.one/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_request.js
+    arguments:
+      _compat.$argument: '[{Type},{ar},{ShowOnly},{Position}]'
+    body_required: true
+- http_request:
+    name: Proto·YouTube Music浏览请求
+    match: ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/browse\?(.*)
+    script_url: https://kelee.one/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_request.js
+    arguments:
+      _compat.$argument: '[{Type},{ar},{ShowOnly},{Position}]'
+    body_required: true
+    binary_body: true
+- http_response:
+    name: JSON·YouTube Music翻译歌词响应
+    match: ^https?:\/\/music\.youtube\.com\/youtubei\/v1\/browse\?(.*)subtype=Translate
+    script_url: https://kelee.one/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_Translate_response.js
+    body_required: true
+- http_response:
+    name: Proto·YouTube Music翻译歌词响应
+    match: ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/browse\?(.*)subtype=Translate
+    script_url: https://kelee.one/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_Translate_response.js
+    body_required: true
+    binary_body: true
+mitm:
+  hostnames:
+    includes:
+    - www.youtube.com
+    - m.youtube.com
+    - tv.youtube.com
+    - music.youtube.com
+    - youtubei.googleapis.com
